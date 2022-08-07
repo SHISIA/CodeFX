@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="553.0" prefWidth="579.0" spacing="20.0" style="-fx-border-color: black; -fx-background-color: white; -fx-stroke: 5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeFx.Controller.QRController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <TilePane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.95" orientation="VERTICAL" prefHeight="213.0" prefWidth="440.0" style="-fx-border-color: #ffaa27; -fx-border-width: 6;">
+      <children>
+         <ImageView fx:id="qrImage" fitHeight="201.0" fitWidth="226.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" TilePane.alignment="CENTER">
+            <TilePane.margin>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </TilePane.margin>
+            <effect>
+               <DropShadow />
+            </effect>
+         </ImageView>
+         <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="185.0" prefWidth="127.0" text=" Q R Code" wrapText="true">
+            <font>
+               <Font name="Wingdings 3" size="44.0" />
+            </font>
+            <padding>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+         </Label>
+      </children>
+      <VBox.margin>
+         <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+      </VBox.margin>
+   </TilePane>
+   <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="57.0" prefWidth="417.0" spacing="20.0">
+      <children>
+         <Button fx:id="encodeBtn" onAction="#onHelloButtonClick" prefHeight="27.0" prefWidth="182.0" text="Encode" />
+          <Button fx:id="decodeBtn" onAction="#onHelloButtonClick" prefHeight="27.0" prefWidth="182.0" text="Decode" />
+      </children>
+      <VBox.margin>
+         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+      </VBox.margin>
+      <padding>
+         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+      </padding>
+   </HBox>
+   <TextField fx:id="inOutput" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="375.0" promptText="QR Text" VBox.vgrow="NEVER">
+      <font>
+         <Font name="Grantha Sangam MN Regular" size="10.0" />
+      </font></TextField>
+</VBox>
