@@ -7,11 +7,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class QRMain extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/codeFX/UICode.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(QRMain.class.getResource("/com/codeFX/UICode.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("CodeFX");
         stage.setScene(scene);
