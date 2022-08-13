@@ -37,13 +37,17 @@ public class QRModel {
 
     private void startOperations(){
         encodeBtn.setDefaultButton(true);
-        encodeBtn.setOnAction(e->{
+        inOutPut.setOnKeyReleased(e->{
             String text=inOutPut.getText();
             try {
                 createQRImage("shisia.png",text);
+               // imageView.setImage(new Image(getClass().getResource("/images/qr-code.gif").toURI().toString());
             } catch (WriterException | IOException ex) {
                 throw new RuntimeException(ex);
             }
+//            catch (URISyntaxException ex) {
+//                throw new RuntimeException(ex);
+//            }
         });
         decodeBtn.setOnAction(e->{
             File file=new File(imageView.getId());
