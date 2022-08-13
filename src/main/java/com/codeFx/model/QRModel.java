@@ -6,7 +6,6 @@ import com.google.zxing.common.BitMatrix;
 import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.QRCodeWriter;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -17,30 +16,26 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.Hashtable;
 
 public class QRModel {
    ImageView imageView;
-   Button encodeBtn;
 
-   TextField inOutPut;
+    TextField inOutPut;
 
-    public QRModel(ImageView img, Button encodeBtn,TextField in_out_field) {
+    public QRModel(ImageView img, TextField in_out_field) {
         imageView = img;
         this.inOutPut=in_out_field;
-        this.encodeBtn=encodeBtn;
         startOperations();
     }
 
     private void startOperations(){
-        encodeBtn.setDefaultButton(true);
         inOutPut.setOnKeyReleased(e->{
             String text=inOutPut.getText();
             try {
                 createQRImage("/Users/apple/Documents/QrImages/QRTempOutPut.jpg",text,"JPG");
-                imageView.setImage(new Image(getClass().getResource("/Users/apple/Documents/QrImages/QRTempOutPut.jpg").toURI().toString()));
-            } catch (WriterException | IOException | URISyntaxException ex) {
+                imageView.setImage(new Image(new File("/Users/apple/Documents/QrImages/QRTempOutPut.jpg").toURI().toString()));
+            } catch (WriterException | IOException ex) {
                 StageLoader.loadStage("/com/codeFX/AlertError.fxml");
                 throw new RuntimeException(ex);
             }

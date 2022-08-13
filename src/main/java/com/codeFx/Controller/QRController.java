@@ -3,7 +3,6 @@ package com.codeFx.Controller;
 import com.codeFx.model.QRModel;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -16,8 +15,6 @@ import java.util.ResourceBundle;
 public class QRController implements Initializable {
     @FXML
     public ImageView qrImage;
-    public Button encodeBtn;
-    public Button decodeBtn;
     public TextField inOutput;
     QRModel model;
     @Override
@@ -41,8 +38,8 @@ public class QRController implements Initializable {
                     createFile("C:\\Users\\"+System.getProperty("user.name")+"\\Documents\\QrImages");
                     break;
             }
-            model=new QRModel(qrImage,encodeBtn,inOutput);
-            qrImage.setImage(new Image(getClass().getResource("/Users/apple/Documents/QrImages/QRTempOutPut.jpg").toURI().toString()));
+            model=new QRModel(qrImage,inOutput);
+            qrImage.setImage(new Image(getClass().getResource("/images/qr-code.gif").toURI().toString()));
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
