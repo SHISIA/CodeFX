@@ -19,7 +19,7 @@ public class StageLoader {
             stage.setTitle("CodeFX");
             stage.setScene(scene);
             stage.show();
-            PauseTransition delay = new PauseTransition(Duration.seconds(5));
+            PauseTransition delay = new PauseTransition(Duration.seconds(2));
             delay.setOnFinished( event -> stage.close() );
             delay.play();
 

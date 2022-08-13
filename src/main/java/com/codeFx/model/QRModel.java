@@ -1,6 +1,6 @@
 package com.codeFx.model;
 
-import com.codeFx.test.BufferedImageLuminanceSource;
+import com.codeFx.lib.BufferedImageLuminanceSource;
 import com.google.zxing.*;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.common.HybridBinarizer;
@@ -32,12 +32,13 @@ public class QRModel {
     private void startOperations(){
         inOutPut.setOnKeyReleased(e->{
             String text=inOutPut.getText();
-            try {
-                createQRImage("/Users/apple/Documents/QrImages/QRTempOutPut.jpg",text,"JPG");
-                imageView.setImage(new Image(new File("/Users/apple/Documents/QrImages/QRTempOutPut.jpg").toURI().toString()));
-            } catch (WriterException | IOException ex) {
-                StageLoader.loadStage("/com/codeFX/AlertError.fxml");
-                throw new RuntimeException(ex);
+            if (!text.isEmpty()){
+                try {
+                    createQRImage("/Users/apple/Documents/QrImages/QRTempOutPut.jpg",text,"JPG");
+                    imageView.setImage(new Image(new File("/Users/apple/Documents/QrImages/QRTempOutPut.jpg").toURI().toString()));
+                } catch (WriterException | IOException ex) {
+                    ex.printStackTrace();
+                }
             }
         });
 
@@ -64,7 +65,6 @@ public class QRModel {
                 try {
                     inOutPut.setText(decodeQRCode(file));
                 } catch (IOException ex) {
-                    StageLoader.loadStage("/com/codeFX/AlertError.fxml");
                     throw new RuntimeException("File Appears to be Empty");
                 }
             }catch (NullPointerException np){

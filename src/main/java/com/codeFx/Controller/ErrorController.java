@@ -14,10 +14,10 @@ public class ErrorController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        try {
-            imageIcon.setImage(new Image(new File(getClass().getResource("/images/error.png").toURI().toString()).toString()));
-        } catch (URISyntaxException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            imageIcon.setImage(new Image(new File(getClass().getResource("/images/error.png").toURI().toString()).toString()));
+//        } catch (URISyntaxException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 }

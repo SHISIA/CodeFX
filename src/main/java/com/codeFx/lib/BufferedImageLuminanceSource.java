@@ -1,4 +1,4 @@
-package com.codeFx.test;
+package com.codeFx.lib;
 
 //
 // Source code recreated from a .class file by IntelliJ IDEA
@@ -86,7 +86,7 @@ public final class BufferedImageLuminanceSource extends LuminanceSource {
     }
 
     public LuminanceSource crop(int left, int top, int width, int height) {
-        return new com.codeFx.test.BufferedImageLuminanceSource(this.image, left, top, width, height);
+        return new com.codeFx.lib.BufferedImageLuminanceSource(this.image, left, top, width, height);
     }
 
     public boolean isRotateSupported() {
@@ -104,7 +104,7 @@ public final class BufferedImageLuminanceSource extends LuminanceSource {
             BufferedImage rotatedImage = new BufferedImage(sourceHeight, sourceWidth, this.image.getType());
             op.filter(this.image, rotatedImage);
             int width = this.getWidth();
-            return new com.codeFx.test.BufferedImageLuminanceSource(rotatedImage, this.top, sourceWidth - (this.left + width), this.getHeight(), width);
+            return new com.codeFx.lib.BufferedImageLuminanceSource(rotatedImage, this.top, sourceWidth - (this.left + width), this.getHeight(), width);
         }
     }
 }
